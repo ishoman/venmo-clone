@@ -5,7 +5,17 @@ import IphoneImage from './IphoneImage';
 function Iphone(){
   return (
     <div>
-      <IphoneImage/>
+      <style jsx>{`
+          .iphone {
+            position: absolute;
+            left: 200px;
+            z-index: 2;
+          }
+        `}
+      </style>
+      <div className='iphone'>
+        <IphoneImage/>
+      </div>
     </div>
   );
 }

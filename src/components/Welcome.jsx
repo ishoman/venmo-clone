@@ -1,11 +1,10 @@
 import React from 'react';
-import Iphone from './Iphone';
+import WelcomeImages from './WelcomeImages';
 
 function Welcome(){
   return (
     <div>
-      <h1>welcome</h1>
-      <Iphone/>
+      <WelcomeImages/>
     </div>
   );
 }
