@@ -7,9 +7,9 @@ function CursorGif(){
       <style jsx>{`
           img {
             height: 18px;
-            position: absolute;
-            top: 309px;
-            left: 31px;
+            position: relative;
+            top: 168px;
+            left: 23px;
             z-index: 1;
           }
         `}

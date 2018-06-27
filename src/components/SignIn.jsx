@@ -4,15 +4,19 @@ function SignIn(){
   return (
     <div>
       <style jsx>{`
-          p {
-            color:#acd2e8;
+          a {
+            color:#4196CB;
             font-size:16px;
             font-weight:500;
             line-height:40px;
+            text-decoration: none;
+          }
+          a:hover{
+            color:#acd2e8;
           }
         `}
       </style>
-      <p>Sign In</p>
+      <a href=''>Sign In</a>
     </div>
   );
 }

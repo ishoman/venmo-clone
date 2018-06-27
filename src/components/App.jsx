@@ -9,16 +9,22 @@ function App(){
   return (
     <div>
       <style global jsx> {`
-        html {
+        body {
           font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        }
+        .container {
+                    max-width: 1024px;
+                    margin: auto;
         }
       `}
       </style>
-      <Nav/>
-      <Switch>
-        <Route exact path='/' component={Welcome}/>
-        <Route component={Error404} />
-      </Switch>
+      <div className='container'>
+        <Nav/>
+        <Switch>
+          <Route exact path='/' component={Welcome}/>
+          <Route component={Error404} />
+        </Switch>
+      </div>
     </div>
   );
 }

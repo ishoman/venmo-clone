@@ -11,23 +11,27 @@ function Transaction(props){
             height: 70px;
             position: relative;
             z-index: 4;
-            border-bottom: 1px solid gray;
 
           }
           .image {
             width:30px;
+            display: flex;
+            align-items: center;
+            left: 5px;
+            bottom: 8px;
           }
           .image img {
             width: 30px;
             height: 30px;
             border-radius: 50%;
+
           }
           .payment-text {
             width: 220px;
             font-size: 10.5px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            top: 10px;
             left: 20px;
             margin:0;
           }
@@ -36,10 +40,17 @@ function Transaction(props){
           }
 
           .payment {
-            line-height: 14px;
+            line-height: 17px;
           }
           .description {
             line-height: 14px;
+          }
+          .smashdatlike {
+            color: grey;
+            top: 6px;
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
           }
           `}
       </style>
@@ -49,6 +60,10 @@ function Transaction(props){
       <div className='payment-text'>
         <p className='payment'><strong>{props.actor}</strong> paid <strong>{props.target}</strong></p>
         <p className='description'>{props.description}</p>
+        <div className='smashdatlike'>
+          <p>Like</p>
+          <p>Comment</p>
+        </div>
       </div>
     </div>
   );

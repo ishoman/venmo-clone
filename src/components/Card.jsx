@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Security(){
+function Card(){
   return (
     <div>
       <style jsx>{`
@@ -15,9 +15,9 @@ function Security(){
           }
         `}
       </style>
-      <a href=''>Security</a>
+      <a href=''>Card</a>
     </div>
   );
 }
 
-export default Security;
+export default Card;
