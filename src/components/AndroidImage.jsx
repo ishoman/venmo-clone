@@ -7,8 +7,10 @@ function AndroidImage(){
       <style jsx>{`
           img {
             width: 324px;
+            height: 635px;
             position: absolute;
-            
+            top: 35px;
+            overflow: hidden;
           }
         `}
       </style>

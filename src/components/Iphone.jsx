@@ -7,7 +7,7 @@ function Iphone(){
     <div>
       <style jsx>{`
           .iphone {
-            position: absolute;
+            position: relative;
             left: 200px;
             z-index: 2;
           }

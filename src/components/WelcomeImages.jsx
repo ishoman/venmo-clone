@@ -5,9 +5,12 @@ import Iphone from './Iphone';
 function WelcomeImages(){
   return (
     <div>
-      <h1>welcome</h1>
+      <style jsx>{`
+          position: relative;
+          `}
+      </style>
       <Android/>
-      <Iphone/>  
+      <Iphone/>
     </div>
   );
 }

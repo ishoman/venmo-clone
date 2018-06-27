@@ -44,35 +44,48 @@ const transactionFeed = [
     target: 'Dana D',
     description: 'Lunch',
     image: 'https://venmopics.appspot.com/u/v2/m/385c90a4-9862-498c-a384-2e0231ed6aac'
+  },
+  {
+  actor: 'Kara Q',
+  target: 'Calvin W',
+  description: 'Booze',
+  image: 'https://venmopics.appspot.com/u/v2/m/385c90a4-9862-498c-a384-2e0231ed6aac'
   }
 ];
 
 function TransactionList(){
   return (
-    <div>
+    <div className='notLoop'>
       <style jsx>{`
-              div {
+              .notLoop {
                 position: relative;
                 top: 130px;
                 left: 25px;
                 z-index: 3;
                 width: 275px;
-                height: 436px;
+                height: 444px;
                 background-color: white;
-
+                overflow: hidden;
+              }
+              .loop {
+                border-bottom: 1px solid gray;
               }
             `}
 
 
       </style>
       {transactionFeed.map((transaction, index) =>
-        <Transaction
-          actor={transaction.actor}
-          target={transaction.target}
-          description={transaction.description}
-          image={transaction.image}
-          key={index}
-          />
+        <div className='loop'>
+          <Transaction
+            actor={transaction.actor}
+            target={transaction.target}
+            description={transaction.description}
+            image={transaction.image}
+            key={index}
+            />
+
+        </div>
+
       )}
     </div>
   );
