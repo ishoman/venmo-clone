@@ -4,9 +4,14 @@ import PropTypes from 'prop-types';
 function NewCommentForm(props){
   let _comment = null;
 
+  function handleNewCommentFormSubmission(event){
+    event.preventDefault();
+    _comment.value = ''
+  }
+
   return (
     <div>
-      <form onSubmit={props.onCommentSubmission}>
+      <form onSubmit={handleNewCommentFormSubmission}>
         <textarea
           type='text'
           id='comment'

@@ -9,6 +9,7 @@ class Transaction extends React.Component {
     this.state = {
       isLiked: false,
       likeButton: 'Like',
+      comments: []
     };
     this.handleLike = this.handleLike.bind(this);
   }
