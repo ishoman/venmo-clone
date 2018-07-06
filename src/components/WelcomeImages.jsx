@@ -2,12 +2,12 @@ import React from 'react';
 import Android from './Android';
 import Iphone from './Iphone';
 
-function WelcomeImages(){
+function WelcomeImages() {
   return (
     <div>
       <style jsx>{`
-          position: relative;
-          `}
+            position: relative;
+            `}
       </style>
       <Android/>
       <Iphone/>
