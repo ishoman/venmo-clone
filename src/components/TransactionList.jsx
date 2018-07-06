@@ -1,5 +1,6 @@
 import React from 'react';
 import Transaction from './Transaction';
+import PropTypes from 'prop-types';
 
 
 const transactionFeed = [
@@ -47,7 +48,15 @@ const transactionFeed = [
   }
 ];
 
-function TransactionList(){
+
+class TransactionList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterTransactionList: []
+    }
+  }
+
   return (
     <div className='notLoop'>
       <style jsx>{`

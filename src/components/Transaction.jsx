@@ -67,6 +67,7 @@ function Transaction(props){
         </div>
         <div className='timer'>
           <img src={Globe}></img>
+          <p></p>
         </div>
       </div>
     </div>
