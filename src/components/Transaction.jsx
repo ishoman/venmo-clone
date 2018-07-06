@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Globe from './../assets/images/globe.png'
 
 function Transaction(props){
   return (
@@ -45,7 +46,7 @@ function Transaction(props){
           .description {
             line-height: 14px;
           }
-          .smashdatlike {
+          .feedback {
             color: grey;
             top: 6px;
             width: 100px;
@@ -60,9 +61,12 @@ function Transaction(props){
       <div className='payment-text'>
         <p className='payment'><strong>{props.actor}</strong> paid <strong>{props.target}</strong></p>
         <p className='description'>{props.description}</p>
-        <div className='smashdatlike'>
+        <div className='feedback'>
           <p>Like</p>
           <p>Comment</p>
+        </div>
+        <div className='timer'>
+          <img src={Globe}></img>
         </div>
       </div>
     </div>

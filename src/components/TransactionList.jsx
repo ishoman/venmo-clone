@@ -1,10 +1,4 @@
 import React from 'react';
-import patrick from './../assets/images/patrick.jpg';
-import mike from './../assets/images/mike.jpg';
-import blake from './../assets/images/blake.jpg';
-import brendan from './../assets/images/brendan.jpg';
-import ansley from './../assets/images/no-image.jpg';
-import kelsey from './../assets/images/kelsey.jpg';
 import Transaction from './Transaction';
 
 
@@ -46,10 +40,10 @@ const transactionFeed = [
     image: 'https://venmopics.appspot.com/u/v2/m/385c90a4-9862-498c-a384-2e0231ed6aac'
   },
   {
-  actor: 'Kara Q',
-  target: 'Calvin W',
-  description: 'Booze',
-  image: 'https://venmopics.appspot.com/u/v2/m/385c90a4-9862-498c-a384-2e0231ed6aac'
+    actor: 'Kara Q',
+    target: 'Calvin W',
+    description: 'Booze',
+    image: 'https://venmopics.appspot.com/u/v2/m/385c90a4-9862-498c-a384-2e0231ed6aac'
   }
 ];
 
@@ -82,10 +76,8 @@ function TransactionList(){
             description={transaction.description}
             image={transaction.image}
             key={index}
-            />
-
+          />
         </div>
-
       )}
     </div>
   );
