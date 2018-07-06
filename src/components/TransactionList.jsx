@@ -1,5 +1,6 @@
 import React from 'react';
 import Transaction from './Transaction';
+import { v4 } from 'uuid';
 
 
 const transactionFeed = [
@@ -68,15 +69,14 @@ function TransactionList(){
 
 
       </style>
-      {transactionFeed.map((transaction, index) =>
+      {transactionFeed.map((transaction) =>
         <div className='loop'>
           <Transaction
             actor={transaction.actor}
             target={transaction.target}
             description={transaction.description}
             image={transaction.image}
-            minutesAgo={transaction.minutesAgo}
-            key={index}
+            key={v4()}
           />
         </div>
       )}

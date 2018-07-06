@@ -12,10 +12,10 @@ class Transaction extends React.Component {
     this.state = {
       isLiked: false,
       likeButton: 'Like',
-      commentButton: 
+      commentButton: 'Comment',
       isCommented: false,
-      comments: []
-      // time: {Moment}
+      comments: [],
+      time: new Moment()
     };
     this.handleLike = this.handleLike.bind(this);
   }
@@ -33,7 +33,7 @@ class Transaction extends React.Component {
   handleComment(){
     if (this.state.isCommented === false){
       this.setState({isCommented: true});
-      this.setState({likeButton: 'Unlike'});
+      this.setState({commentButton: 'Comment'});
     } else {
       this.setState({isLiked: false});
       this.setState({likeButton: 'Like'});
@@ -146,7 +146,6 @@ Transaction.propTypes = {
   target: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  minutesAgo: PropTypes.instanceOf(Moment).isRequired,
 };
 
 
