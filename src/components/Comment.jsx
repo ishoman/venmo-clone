@@ -1,13 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Transaction from "./Transaction";
 
-function Comments(){
+function Comment(){
   let _comment = null
 
   handleCommentSubmission(event) {
     event.preventDefault();
-    
+    props.onCommentSubmission({})
   }
+
   return (
     <div>
       <form onSubmit={handleCommentSubmission}>
@@ -20,6 +22,9 @@ function Comments(){
     </div>
   );
 }
+
+Comment.propTypes = {
+  onCommentSubmission: PropTypes.func
 }
 
-export default Comments;
+export default Comment;
