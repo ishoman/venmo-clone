@@ -12,7 +12,10 @@ class Transaction extends React.Component {
     this.state = {
       isLiked: false,
       likeButton: 'Like',
-      time: null
+      commentButton: 
+      isCommented: false,
+      comments: []
+      // time: {Moment}
     };
     this.handleLike = this.handleLike.bind(this);
   }
@@ -27,14 +30,27 @@ class Transaction extends React.Component {
     }
   }
 
-  componentDidMount(){
+  handleComment(){
+    if (this.state.isCommented === false){
+      this.setState({isCommented: true});
+      this.setState({likeButton: 'Unlike'});
+    } else {
+      this.setState({isLiked: false});
+      this.setState({likeButton: 'Like'});
+    }
   }
 
-  updateTransactionTime() {
-    const newTransactionTime = (this.minutesAgo).fromNow(true);
-    console.log(newTransactionTime);
-    this.setState({time: newTransactionTime});
-  }
+  // componentDidMount(){
+  //   this.minutesAgoUpdateTimer = setInterval(() =>
+  //     this.updateTransactionTime(), 5000
+  //   );
+  // }
+  //
+  // updateTransactionTime(props) {
+  //   const newTransactionTime = (this.props.minutesAgo).fromNow(true);
+  //   console.log(newTransactionTime);
+  //   this.setState({time: newTransactionTime});
+  // }
 
 
   render() {
@@ -99,6 +115,9 @@ class Transaction extends React.Component {
               color: grey;
               font-size: 10px;
             }
+            .time {
+              text-decoration: underline dashed;
+            }
             `}
         </style>
         <div className='image'>
@@ -109,11 +128,11 @@ class Transaction extends React.Component {
           <p className='description'>{this.props.description}</p>
           <div className='feedback'>
             <p onClick={this.handleLike}>{this.state.likeButton}</p>
-            <p>Comment</p>
+            <p onClick={this.handleComment}>Comment</p>
           </div>
         </div>
         <div className='timer'>
-          <p>{this.state.time}</p>
+          <p className='time'>1s</p>
           <img src={Globe}></img>
         </div>
       </div>
