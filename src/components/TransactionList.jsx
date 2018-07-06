@@ -75,6 +75,7 @@ function TransactionList(){
             target={transaction.target}
             description={transaction.description}
             image={transaction.image}
+            minutesAgo={transaction.minutesAgo}
             key={index}
           />
         </div>

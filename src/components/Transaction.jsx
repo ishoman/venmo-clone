@@ -19,16 +19,20 @@ class Transaction extends React.Component {
   handleLike(){
     if (this.state.isLiked === false){
       this.setState({isLiked: true});
-      this.setState({likeButton: 'Unlike'})
+      this.setState({likeButton: 'Unlike'});
     } else {
       this.setState({isLiked: false});
-      this.setState({likeButton: 'Like'})
+      this.setState({likeButton: 'Like'});
     }
   }
 
 
 
-  render(props) {
+
+  render() {
+  function  displayMinutesAgo(minutesAgo) {
+      return minutesAgo.from(new Moment(), true);
+    }
     return (
       <div>
         <style jsx>{`
@@ -103,10 +107,10 @@ class Transaction extends React.Component {
             <p>Comment</p>
           </div>
         </div>
-          <div className='timer'>
-            <p>19m</p>
-            <img src={Globe}></img>
-          </div>
+        <div className='timer'>
+          <p>{displayMinutesAgo(this.props.minutesAgo)}</p>
+          <img src={Globe}></img>
+        </div>
       </div>
     );
   }
@@ -116,7 +120,8 @@ Transaction.propTypes = {
   actor: PropTypes.string.isRequired,
   target: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
+  image: PropTypes.string.isRequired,
+  minutesAgo: PropTypes.instanceOf(Moment).isRequired
 };
 
 
