@@ -7,7 +7,9 @@ function Comment(){
 
   handleCommentSubmission(event) {
     event.preventDefault();
-    props.onCommentSubmission({})
+    props.onCommentSubmission({comment: _comment.value})
+    const newCommentList = this.state.comments.slice();
+    console.log(newCommentList);
   }
 
   return (
