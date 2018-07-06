@@ -9,14 +9,20 @@ class Transaction extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      isLiked: false
+      isLiked: false,
+      likeButton: 'Like'
     };
     this.handleLike = this.handleLike.bind(this);
   }
 
   handleLike(){
-    this.setState({isLiked: true});
-    console.log('the state is set to: ' + this.state.isLiked);
+    if (this.state.isLiked === false){
+      this.setState({isLiked: true});
+      this.setState({likeButton: 'Unlike'})
+    } else {
+      this.setState({isLiked: false});
+      this.setState({likeButton: 'Like'})
+    }
   }
 
   render(props) {
@@ -79,7 +85,7 @@ class Transaction extends React.Component {
           <p className='payment'><strong>{this.props.actor}</strong> paid <strong>{this.props.target}</strong></p>
           <p className='description'>{this.props.description}</p>
           <div className='feedback'>
-            <p onClick={this.handleLike}>Like</p>
+            <p onClick={this.handleLike}>{this.state.likeButton}</p>
             <p>Comment</p>
           </div>
           <div className='timer'>
