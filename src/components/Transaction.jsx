@@ -1,23 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Globe from './../assets/images/globe.png';
-import Moment from 'moment';
-
-
 
 class Transaction extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {
       isLiked: false,
+      commentShow: false,
       likeButton: 'Like',
       commentButton: 'Comment',
-      isCommented: false,
-      comments: [],
-      time: new Moment()
+      comments: []
     };
     this.handleLike = this.handleLike.bind(this);
+    this.handleComment = this.handleComment.bind(this);
   }
 
   handleLike(){
@@ -31,12 +27,12 @@ class Transaction extends React.Component {
   }
 
   handleComment(){
-    if (this.state.isCommented === false){
-      this.setState({isCommented: true});
+    if (this.state.commentShow === false){
+      this.setState({commentShow: true});
       this.setState({commentButton: 'Comment'});
     } else {
-      this.setState({isLiked: false});
-      this.setState({likeButton: 'Like'});
+      this.setState({commentShow: false});
+      this.setState({commentButton: 'Hide'});
     }
   }
 
@@ -128,13 +124,16 @@ class Transaction extends React.Component {
           <p className='description'>{this.props.description}</p>
           <div className='feedback'>
             <p onClick={this.handleLike}>{this.state.likeButton}</p>
-            <p onClick={this.handleComment}>Comment</p>
+            <p onClick={this.handleComment}>{this.state.commentButton}</p>
           </div>
         </div>
         <div className='timer'>
           <p className='time'>1s</p>
           <img src={Globe}></img>
         </div>
+        {if this.state.is
+
+        }
       </div>
     );
   }
