@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Globe from './../assets/images/globe.png';
+import Moment from 'moment';
 
 
 
@@ -24,6 +25,8 @@ class Transaction extends React.Component {
       this.setState({likeButton: 'Like'})
     }
   }
+
+
 
   render(props) {
     return (
@@ -76,6 +79,17 @@ class Transaction extends React.Component {
               display: flex;
               justify-content: space-between;
             }
+            .timer {
+              display:flex;
+              justify-content: space-around;
+              align-items: center;
+              top: 10px;
+              right: 10px;
+              width: 40px;
+              height: 14px;
+              color: grey;
+              font-size: 10px;
+            }
             `}
         </style>
         <div className='image'>
@@ -88,11 +102,11 @@ class Transaction extends React.Component {
             <p onClick={this.handleLike}>{this.state.likeButton}</p>
             <p>Comment</p>
           </div>
-          <div className='timer'>
-            <img src={Globe}></img>
-            <p></p>
-          </div>
         </div>
+          <div className='timer'>
+            <p>19m</p>
+            <img src={Globe}></img>
+          </div>
       </div>
     );
   }
