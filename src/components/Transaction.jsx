@@ -18,7 +18,6 @@ class Transaction extends React.Component {
   }
 
   handleLike(){
-    console.log(this.state);
     if (this.state.isLiked === false){
       this.setState({isLiked: true});
       this.setState({likeButton: 'Unlike'});
@@ -26,6 +25,15 @@ class Transaction extends React.Component {
       this.setState({isLiked: false});
       this.setState({likeButton: 'Like'});
     }
+  }
+
+  componentDidMount(){
+  }
+
+  updateTransactionTime() {
+    const newTransactionTime = (this.minutesAgo).fromNow(true);
+    console.log(newTransactionTime);
+    this.setState({time: newTransactionTime});
   }
 
 
@@ -119,6 +127,7 @@ Transaction.propTypes = {
   target: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  minutesAgo: PropTypes.instanceOf(Moment).isRequired,
 };
 
 
