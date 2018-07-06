@@ -12,7 +12,7 @@ function AndroidImage(){
             top: 35px;
             overflow: hidden;
           }
-          .android:hover {
+          img:hover {
             transform: translateX(-10px);
           }
 

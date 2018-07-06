@@ -11,7 +11,11 @@ class WelcomeImages extends React.Component {
     };
   }
 
-  handleAddingNewCommentToList(newComment){}
+  handleAddingNewCommentToList(newComment){
+    const newMasterCommentList = this.state.masterCommentList.slice();
+    newMasterCommentList.push(newComment);
+    this.setState({masterCommentList: newMasterCommentList});
+  }
 
   render(){
     return (
