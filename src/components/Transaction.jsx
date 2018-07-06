@@ -30,9 +30,6 @@ class Transaction extends React.Component {
 
 
   render() {
-  function  displayMinutesAgo(minutesAgo) {
-      return minutesAgo.from(new Moment(), true);
-    }
     return (
       <div>
         <style jsx>{`
@@ -108,13 +105,17 @@ class Transaction extends React.Component {
           </div>
         </div>
         <div className='timer'>
-          <p>{moment()}</p>
+          <p>{displayMinutesAgo(this.props.minutesAgo)}</p>
           <img src={Globe}></img>
         </div>
       </div>
     );
   }
 }
+
+function  displayMinutesAgo(minutesAgo) {
+    return minutesAgo.from(new Moment(), true);
+  }
 
 Transaction.propTypes = {
   actor: PropTypes.string.isRequired,
