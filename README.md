@@ -11,9 +11,9 @@ _This project is a clone of Venmo's homepage (https://venmo.com/) using React. T
 
 ## Component Tree
 
-![alt text](componentTree)
+![alt text](componentTree.jpg)
 
-I decided to add state to the WelcomeImages Component because eventually I will want a user to be able to click the android phone, enter text, and create new transaction objects. And WelcomeImages is the lowest common ancestor between the Iphone and Android components. 
+I decided to add state to the WelcomeImages Component because eventually I want a user to be able to click the android phone, enter text, and create new transaction objects. And WelcomeImages is the lowest common ancestor between the Iphone and Android components.
 
 ## Setup/Installation Requirements
 
