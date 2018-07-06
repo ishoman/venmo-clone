@@ -37,9 +37,7 @@ class CommentControl extends React.Component {
           `}
 
         </style>
-        <div>
-          <p onClick={this.handleComment}>Comment</p>
-        </div>
+        <p onClick={this.handleComment}>Comment</p>
         <div>
           {commentsVisible}
         </div>

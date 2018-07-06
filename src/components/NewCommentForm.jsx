@@ -6,7 +6,7 @@ function NewCommentForm(props){
 
   function handleNewCommentFormSubmission(event){
     event.preventDefault();
-    _comment.value = ''
+    _comment.value = '';
   }
 
   return (
