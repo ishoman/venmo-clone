@@ -108,7 +108,7 @@ class Transaction extends React.Component {
           </div>
         </div>
         <div className='timer'>
-          <p>{displayMinutesAgo(this.props.minutesAgo)}</p>
+          <p>{moment()}</p>
           <img src={Globe}></img>
         </div>
       </div>
