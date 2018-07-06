@@ -12,9 +12,14 @@ function AndroidImage(){
             top: 35px;
             overflow: hidden;
           }
+          .android:hover {
+            transform: translateX(-10px);
+          }
+
+          }
         `}
       </style>
-      <img src={AndroidPng}></img>
+      <img className="android" src={AndroidPng}></img>
     </div>
   );
 }
