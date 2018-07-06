@@ -27,7 +27,8 @@ I added state for whether a transaction was liked or not in the Transaction comp
 
 ## Known Bugs
 
-_No known bugs_
+* When "Comment" is clicked the generic input becomes visible but overlaps other content. I have not attempted to style it yet.
+* There is not a submit button/functionality that actually stores comments for the transaction.
 
 ## Support and Contact Details
 
