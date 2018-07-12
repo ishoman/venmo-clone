@@ -17,14 +17,15 @@ function IphoneImage(props){
       </style>
       <img src={IphonePng}></img>
       <div className="transaction-list">
-        <TransactionList transactionFeed={props.transactionFeed}/>
+        <TransactionList transactionFeed={props.transactionFeed} handleLike={this.handleLike}/>
       </div>
     </div>
   );
 }
 
 IphoneImage.propTypes = {
-  transactionFeed: PropTypes.array
+  transactionFeed: PropTypes.array,
+  handleLike: PropTypes.func
 }
 
 export default IphoneImage;

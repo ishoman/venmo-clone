@@ -3,25 +3,7 @@ import PropTypes from 'prop-types';
 import Globe from './../assets/images/globe.png';
 import CommentControl from './CommentControl';
 
-class Transaction extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isLiked: false,
-      likeButton: 'Like',
-    };
-    this.handleLike = this.handleLike.bind(this);
-  }
-
-  handleLike(){
-    if (this.state.isLiked === false){
-      this.setState({isLiked: true});
-      this.setState({likeButton: 'Unlike'});
-    } else {
-      this.setState({isLiked: false});
-      this.setState({likeButton: 'Like'});
-    }
-  }
+function Transaction(props) {
 
 
   // componentDidMount(){
@@ -37,7 +19,6 @@ class Transaction extends React.Component {
   // }
 
 
-  render() {
     return (
       <div className= 'transaction'>
         <style jsx>{`
@@ -105,13 +86,13 @@ class Transaction extends React.Component {
             `}
         </style>
         <div className='image'>
-          <img src={this.props.image}></img>
+          <img src={props.image}></img>
         </div>
         <div className='payment-text'>
-          <p className='payment'><strong>{this.props.actor}</strong> paid <strong>{this.props.target}</strong></p>
-          <p className='description'>{this.props.description}</p>
+          <p className='payment'><strong>{props.actor}</strong> paid <strong>{props.target}</strong></p>
+          <p className='description'>{props.description}</p>
           <div className='feedback'>
-            <p onClick={this.handleLike}>{this.state.likeButton}</p>
+            <p onClick={props.handleLike}>{props.likeButton}</p>
             <p><CommentControl/></p>
           </div>
         </div>
@@ -122,7 +103,7 @@ class Transaction extends React.Component {
       </div>
     );
   }
-}
+
 
 
 Transaction.propTypes = {
@@ -130,6 +111,7 @@ Transaction.propTypes = {
   target: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  handleLike: PropTypes.func
 };
 
 

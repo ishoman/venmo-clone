@@ -16,14 +16,15 @@ function Iphone(props){
         `}
       </style>
       <div className='iphone'>
-        <IphoneImage transactionFeed={props.transactionFeed}/>
+        <IphoneImage transactionFeed={props.transactionFeed} handleLike={this.handleLike}/>
       </div>
     </div>
   );
 }
 
 Iphone.propTypes = {
-  transactionFeed: PropTypes.array
+  transactionFeed: PropTypes.array,
+  handleLike: PropTypes.func
 }
 
 export default Iphone;

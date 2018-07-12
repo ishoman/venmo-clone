@@ -34,6 +34,7 @@ function TransactionList(props){
             description={transaction.description}
             image={transaction.image}
             key={v4()}
+            handleLike={props.handleLike}
           />
         </div>
       )}
@@ -42,7 +43,8 @@ function TransactionList(props){
 }
 
 TransactionList.propTypes = {
-  transactionFeed: PropTypes.object
+  transactionFeed: PropTypes.object,
+  handleLike: PropTypes.func
 }
 
 
