@@ -2,10 +2,10 @@ import React from 'react';
 import Transaction from './Transaction';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import Moment from 'moment';
 
 
 function TransactionList(props){
-  console.log(props);
   return (
     <div className='notLoop'>
       <style jsx>{`
@@ -34,7 +34,9 @@ function TransactionList(props){
             description={transaction.description}
             image={transaction.image}
             key={v4()}
+            isLiked={transaction.isLiked}
             handleLike={props.handleLike}
+            timeOpen={new Moment().fromNow(true)}
           />
         </div>
       )}
@@ -43,9 +45,9 @@ function TransactionList(props){
 }
 
 TransactionList.propTypes = {
-  transactionFeed: PropTypes.object,
-  handleLike: PropTypes.func
-}
+  transactionFeed: PropTypes.array,
+  handleLike: PropTypes.func,
+};
 
 
 export default TransactionList;

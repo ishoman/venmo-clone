@@ -4,7 +4,6 @@ import TransactionList from './TransactionList';
 import PropTypes from 'prop-types';
 
 function IphoneImage(props){
-  console.log(props);
   return (
     <div>
       <style jsx>{`
@@ -17,7 +16,10 @@ function IphoneImage(props){
       </style>
       <img src={IphonePng}></img>
       <div className="transaction-list">
-        <TransactionList transactionFeed={props.transactionFeed} handleLike={this.handleLike}/>
+        <TransactionList
+          transactionFeed={props.transactionFeed}
+          handleLike={props.handleLike}
+        />
       </div>
     </div>
   );
@@ -25,7 +27,7 @@ function IphoneImage(props){
 
 IphoneImage.propTypes = {
   transactionFeed: PropTypes.array,
-  handleLike: PropTypes.func
-}
+  handleLike: PropTypes.func,
+};
 
 export default IphoneImage;

@@ -2,26 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Globe from './../assets/images/globe.png';
 import CommentControl from './CommentControl';
+import Like from './Like';
 
 function Transaction(props) {
-
-
-  // componentDidMount(){
-  //   this.minutesAgoUpdateTimer = setInterval(() =>
-  //     this.updateTransactionTime(), 5000
-  //   );
-  // }
-  //
-  // updateTransactionTime(props) {
-  //   const newTransactionTime = (this.props.minutesAgo).fromNow(true);
-  //   console.log(newTransactionTime);
-  //   this.setState({time: newTransactionTime});
-  // }
-
-
-    return (
-      <div className= 'transaction'>
-        <style jsx>{`
+  return (
+    <div className= 'transaction'>
+      <style jsx>{`
             div {
               display: flex;
               width: 282px;
@@ -84,25 +70,29 @@ function Transaction(props) {
               text-decoration: underline dashed;
             }
             `}
-        </style>
-        <div className='image'>
-          <img src={props.image}></img>
-        </div>
-        <div className='payment-text'>
-          <p className='payment'><strong>{props.actor}</strong> paid <strong>{props.target}</strong></p>
-          <p className='description'>{props.description}</p>
-          <div className='feedback'>
-            <p onClick={props.handleLike}>{props.likeButton}</p>
-            <p><CommentControl/></p>
-          </div>
-        </div>
-        <div className='timer'>
-          <p className='time'>1s</p>
-          <img src={Globe}></img>
+      </style>
+      <div className='image'>
+        <img src={props.image}></img>
+      </div>
+      <div className='payment-text'>
+        <p className='payment'><strong>{props.actor}</strong> paid <strong>{props.target}</strong></p>
+        <p className='description'>{props.description}</p>
+        <div className='feedback'>
+          <Like
+            handleLike={props.handleLike}
+            like={'Like'}
+            isLiked={props.isLiked}
+          />
+          <p><CommentControl/></p>
         </div>
       </div>
-    );
-  }
+      <div className='timer'>
+        <p className='time'>{props.timeOpen}</p>
+        <img src={Globe}></img>
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -111,7 +101,9 @@ Transaction.propTypes = {
   target: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  handleLike: PropTypes.func
+  isLiked: PropTypes.bool.isRequired,
+  handleLike: PropTypes.func,
+  timeOpen: PropTypes.string,
 };
 
 
