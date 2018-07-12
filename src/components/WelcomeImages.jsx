@@ -6,16 +6,10 @@ class WelcomeImages extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      masterCommentList: []
-    };
+
   }
 
-  handleAddingNewCommentToList(newComment){
-    const newMasterCommentList = this.state.masterCommentList.slice();
-    newMasterCommentList.push(newComment);
-    this.setState({masterCommentList: newMasterCommentList});
-  }
+
 
   render(){
     return (
