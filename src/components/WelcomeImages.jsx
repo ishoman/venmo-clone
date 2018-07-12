@@ -4,15 +4,15 @@ import Iphone from './Iphone';
 import Moment from 'moment';
 
 const transactionFeed = [
-  0: {
+  {
     actor: 'Patrick A',
     target: 'Naja G',
     description: 'Beautiful glove',
     image: 'https://venmopics.appspot.com/u/v1/m/0f0cab35-c81f-47f6-89f2-29362bcdddbb',
     isLiked: false,
     timeOpen: new Moment().fromNow(true),
-  }
-  1: {
+  },
+  {
     actor: 'Mike C',
     target: 'Robbie N',
     description: 'Security deposit',
@@ -62,6 +62,8 @@ const transactionFeed = [
   }
 ];
 
+
+
 class WelcomeImages extends React.Component {
 
   constructor(props){
@@ -69,22 +71,10 @@ class WelcomeImages extends React.Component {
     this.state = {
       transactionFeed: transactionFeed
     };
-    this.handleLike = this.handleLike.bind(this);
   }
 
-  handleLike(i){
-    if (this.state.transactionFeed.isLiked === false){
-      this.setState();
-      console.log(this.state);
-    } else {
-      this.setState({isLiked: false});
-      console.log(this.state);
-
-    }
-  }
 
   render(){
-    console.log(this.state.transactionFeed.isLiked);
     return (
       <div>
         <style jsx>{`

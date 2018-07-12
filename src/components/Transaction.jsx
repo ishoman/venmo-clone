@@ -80,7 +80,6 @@ function Transaction(props) {
         <div className='feedback'>
           <Like
             handleLike={props.handleLike}
-            like={'Like'}
             isLiked={props.isLiked}
           />
           <p><CommentControl/></p>

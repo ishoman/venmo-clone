@@ -34,7 +34,7 @@ function TransactionList(props){
             description={transaction.description}
             image={transaction.image}
             key={v4()}
-            isLiked={transaction.isLiked}
+            isLiked={false}
             handleLike={props.handleLike}
             timeOpen={new Moment().fromNow(true)}
           />
