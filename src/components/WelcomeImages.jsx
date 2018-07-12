@@ -69,7 +69,6 @@ class WelcomeImages extends React.Component {
     this.state = {
       transactionFeed: transactionFeed
     }
-    console.log(this.state);
   }
 
 
@@ -82,7 +81,7 @@ class WelcomeImages extends React.Component {
               `}
         </style>
         <Android/>
-        <Iphone/>
+        <Iphone transactionFeed={this.state.transactionFeed} />
       </div>
     );
   }

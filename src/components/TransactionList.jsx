@@ -1,6 +1,7 @@
 import React from 'react';
 import Transaction from './Transaction';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 
 function TransactionList(){

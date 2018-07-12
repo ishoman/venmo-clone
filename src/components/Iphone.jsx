@@ -1,8 +1,9 @@
 import React from 'react';
 import IphoneImage from './IphoneImage';
+import PropTypes from 'prop-types';
 
 
-function Iphone(){
+function Iphone(props){
   return (
     <div>
       <style jsx>{`
@@ -14,10 +15,14 @@ function Iphone(){
         `}
       </style>
       <div className='iphone'>
-        <IphoneImage/>
+        <IphoneImage transactionFeed={this.props.transactionFeed}/>
       </div>
     </div>
   );
+}
+
+Iphone.propTypes = {
+  transactionFeed: PropTypes.object
 }
 
 export default Iphone;
