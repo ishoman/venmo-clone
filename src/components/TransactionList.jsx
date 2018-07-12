@@ -4,7 +4,8 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 
-function TransactionList(){
+function TransactionList(props){
+  console.log(props);
   return (
     <div className='notLoop'>
       <style jsx>{`
@@ -25,7 +26,7 @@ function TransactionList(){
 
 
       </style>
-      {transactionFeed.map((transaction) =>
+      {props.transactionFeed.map((transaction) =>
         <div className='loop'>
           <Transaction
             actor={transaction.actor}
@@ -38,6 +39,10 @@ function TransactionList(){
       )}
     </div>
   );
+}
+
+TransactionList.propTypes = {
+  transactionFeed: PropTypes.object
 }
 
 

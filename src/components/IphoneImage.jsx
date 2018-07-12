@@ -1,8 +1,10 @@
 import React from 'react';
 import IphonePng from './../assets/images/iphone.png';
 import TransactionList from './TransactionList';
+import PropTypes from 'prop-types';
 
-function IphoneImage(){
+function IphoneImage(props){
+  console.log(props);
   return (
     <div>
       <style jsx>{`
@@ -15,10 +17,14 @@ function IphoneImage(){
       </style>
       <img src={IphonePng}></img>
       <div className="transaction-list">
-        <TransactionList/>
+        <TransactionList transactionFeed={props.transactionFeed}/>
       </div>
     </div>
   );
+}
+
+IphoneImage.propTypes = {
+  transactionFeed: PropTypes.array
 }
 
 export default IphoneImage;

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 function Iphone(props){
+  console.log(props);
   return (
     <div>
       <style jsx>{`
@@ -15,14 +16,14 @@ function Iphone(props){
         `}
       </style>
       <div className='iphone'>
-        <IphoneImage transactionFeed={this.props.transactionFeed}/>
+        <IphoneImage transactionFeed={props.transactionFeed}/>
       </div>
     </div>
   );
 }
 
 Iphone.propTypes = {
-  transactionFeed: PropTypes.object
+  transactionFeed: PropTypes.array
 }
 
 export default Iphone;
